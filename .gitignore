@@ -27,6 +27,3 @@ go.work.sum
 # pre-commit jobs
 .pre-commit-trivy-cache/
 
-# Go packages
-go.mod
-go.sum
