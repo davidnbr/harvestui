@@ -1,21 +1,23 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ],
+  "extends": ["config:recommended", ":dependencyDashboardApproval"],
   "vulnerabilityAlerts": {
     "enabled": true,
-    "labels": ["security", "vulnerability"]
+    "labels": ["security", "vulnerability"],
+    "groupName": "all security updates",
+    "groupSlug": "sec-updates"
   },
   "osvVulnerabilityAlerts": true,
   "packageRules": [
     {
-      "description": "Group minor and patch security updates",
-      "matchDepTypes": ["dependencies", "devDependencies", "peerDependencies", "optionalDependencies"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchLabels": ["security"],
-      "groupName": "minor and patch security updates",
-      "groupSlug": "sec-minor-patch"
+      "description": "Group all security updates",
+      "matchSourceUrls": [
+        "https://github.com/advisories/**",
+        "https://nvd.nist.gov/vuln/detail/**"
+      ],
+      "groupName": "all security updates",
+      "groupSlug": "sec-updates",
+      "labels": ["security", "vulnerability"]
     }
   ]
 }
