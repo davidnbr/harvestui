@@ -3,4 +3,9 @@
   "extends": [
     "config:recommended"
   ]
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["security"],
+    "assignees": ["@davidnbr"]
+  }
 }
