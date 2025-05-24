@@ -5,7 +5,17 @@
   ]
   "vulnerabilityAlerts": {
     "enabled": true,
-    "labels": ["security"],
-    "assignees": ["@davidnbr"]
-  }
+    "labels": ["security", "vulnerability"]
+  },
+  "osvVulnerabilityAlerts": true,
+  "packageRules": [
+    {
+      "description": "Group minor and patch security updates",
+      "matchDepTypes": ["dependencies", "devDependencies", "peerDependencies", "optionalDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchLabels": ["security"],
+      "groupName": "minor and patch security updates",
+      "groupSlug": "sec-minor-patch"
+    }
+  ]
 }
